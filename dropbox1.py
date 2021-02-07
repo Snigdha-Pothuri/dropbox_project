@@ -3,9 +3,9 @@ import os
 class TransferData:
     def __init__(self,access_token):
         self.access_token=access_token
-        dbx=dropbox.Dropbox(self.access_token)
-    def upload_file(self,file_from,file_to):
         
+    def upload_file(self,file_from,file_to):
+        dbx=dropbox.Dropbox(self.access_token)
         local_path = os.path.join(root, filename)
         relative_path=os.path.relpath(local_path,file_from)
         dropbox_path=os.path.join(file_to,relative_path)
@@ -19,3 +19,4 @@ def main():
     transferData.upload_file(file_from,file_to)
     print("file has been succesfully moved")
 main()
+ 
